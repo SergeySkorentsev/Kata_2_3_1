@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #dddddd;
+            border-collapse: collapse;
+        }
+        th {
+            font-weight: bold;
+            padding: 5px;
+            background: #efefef;
+            border: 1px solid #dddddd;
+        }
+        td {
+            border: 1px solid #dddddd;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div th:if="${ not#lists.isEmpty(cars)}">
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Year of production</th>
+                <th>Country of production</th>
+            </tr>
+            <tr th:each="car : ${cars}">
+                <td th:text="${car.model}"></td>
+                <td th:text="${car.yearOfProd}"></td>
+                <td th:text="${car.countryOfProd}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
